@@ -92,10 +92,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\ColorExtensions.cs" />
+    <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\ButtonFrameRenderer.cs" />
+    <Compile Include="Renderers\CalendarButtonRenderer.cs" />
+    <Compile Include="Renderers\CustomMapRenderer.cs" />
+    <Compile Include="Renderers\CustomSliderRenderer.cs" />
+    <Compile Include="Renderers\ExtendedEntryRenderer.cs" />
+    <Compile Include="Services\DismissKeyboard\DismissKeyboardService.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -106,6 +114,8 @@
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\pushpin_01.png" />
+    <Content Include="Assets\pushpin_02.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-200.png" />
     <Content Include="Assets\SmallTile.scale-400.png" />
@@ -195,6 +205,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\XFStarterKit.Core.Model\XFStarterKit.Core.Models.csproj">
+      <Project>{E24091BB-A4F4-4463-AC9C-72C5DDC28BD2}</Project>
+      <Name>XFStarterKit.Core.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XFStarterKit\XFStarterKit.csproj">
       <Project>{b28a1b4c-bf5a-4d64-8de6-f6e947253ad2}</Project>
       <Name>XFStarterKit</Name>

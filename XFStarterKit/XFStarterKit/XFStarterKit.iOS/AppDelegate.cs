@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using CarouselView.FormsPlugin.iOS;
 using Foundation;
 using UIKit;
+using XFStarterKit.Core;
+using XFStarterKit.Core.Services.Authentication;
+using XFStarterKit.Core.ViewModels.Base;
+using XFStarterKit.iOS.Services;
 
 namespace XFStarterKit.iOS
 {
@@ -23,9 +27,34 @@ namespace XFStarterKit.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+            CarouselViewRenderer.Init();
+            Renderers.Calendar.Init();
+            Xamarin.FormsMaps.Init();
+            InitXamanimation();
+            Rg.Plugins.Popup.Popup.Init();
+
+            RegisterPlatformDependencies();
+
             LoadApplication(new XFStarterKit.Core.App());
 
-            return base.FinishedLaunching(app, options);
+            base.FinishedLaunching(app, options);
+
+            UINavigationBar.Appearance.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
+            UINavigationBar.Appearance.ShadowImage = new UIImage();
+            UINavigationBar.Appearance.BackgroundColor = UIColor.Clear;
+            UINavigationBar.Appearance.TintColor = UIColor.White;
+            UINavigationBar.Appearance.BarTintColor = UIColor.Clear;
+            UINavigationBar.Appearance.Translucent = true;
+
+            return true;
+        }
+
+        void RegisterPlatformDependencies() => Locator.Instance.Register<IBrowserCookiesService, BrowserCookiesService>();
+        static void InitXamanimation()
+        {
+            var t2 = typeof(Xamanimation.AnimationBase);
         }
     }
 }

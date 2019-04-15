@@ -90,8 +90,17 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Effects\UnderlineTextEffect.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renderers\CalendarButtonRenderer.cs" />
+    <Compile Include="Renderers\CustomMapRenderer.cs" />
+    <Compile Include="Renderers\CustomNavigationRenderer.cs" />
+    <Compile Include="Renderers\CustomPageRenderer.cs" />
+    <Compile Include="Renderers\ExtendedEntryRenderer.cs" />
+    <Compile Include="Renderers\TransparentViewCell.cs" />
+    <Compile Include="Services\BrowserCookiesService.cs" />
+    <Compile Include="Services\DismissKeyboard\DismissKeyboardService.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -199,10 +208,20 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\XFStarterKit.Core.Model\XFStarterKit.Core.Models.csproj">
+      <Project>{E24091BB-A4F4-4463-AC9C-72C5DDC28BD2}</Project>
+      <Name>XFStarterKit.Core.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XFStarterKit\XFStarterKit.csproj">
       <Project>{b28a1b4c-bf5a-4d64-8de6-f6e947253ad2}</Project>
       <Name>XFStarterKit</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pushpin_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pushpin_01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
