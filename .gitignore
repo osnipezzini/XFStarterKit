@@ -11,3 +11,6 @@
 /XFStarterKit/XFStarterKit/XFStarterKit.iOS/obj
 /XFStarterKit/XFStarterKit/XFStarterKit.UWP/bin/x86/Debug
 /XFStarterKit/XFStarterKit/XFStarterKit.UWP/obj
+/XFStarterKit/XFStarterKit.RequestHandler/obj
+/XFStarterKit/XFStarterKit.Validations/obj
+/XFStarterKit/XFStarterKit.ViewModels/obj
