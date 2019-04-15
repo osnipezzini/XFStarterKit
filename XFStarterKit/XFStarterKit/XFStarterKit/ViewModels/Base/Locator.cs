@@ -1,16 +1,13 @@
 ﻿using Autofac;
 using System;
-using XFStarterKit.Core.Models;
 using XFStarterKit.Core.Services.Analytic;
 using XFStarterKit.Core.Services.Authentication;
 using XFStarterKit.Core.Services.Dialog;
 using XFStarterKit.Core.Services.File;
 using XFStarterKit.Core.Services.Geolocator;
 using XFStarterKit.Core.Services.Navigation;
-using XFStarterKit.Core.Services.Notification;
 using XFStarterKit.Core.Services.OpenUri;
 using XFStarterKit.Core.Services.Request;
-using XFStarterKit.Core.Services.Settings;
 
 namespace XFStarterKit.Core.ViewModels.Base
 {
@@ -35,24 +32,10 @@ namespace XFStarterKit.Core.ViewModels.Base
             containerBuilder.RegisterType<DefaultBrowserCookiesService>().As<IBrowserCookiesService>();
             containerBuilder.RegisterType<GravatarUrlProvider>().As<IAvatarUrlProvider>();
             containerBuilder.RegisterType<FileService>().As<IFileService>();
-            containerBuilder.RegisterType(typeof(SettingsService)).As(typeof(ISettingsService<RemoteSettings>));
-
-            if (AppSettings.UseFakes)
-            {
-                containerBuilder.RegisterType<FakeNotificationService>().As<INotificationService>();
-            }
-            else
-            {
-                containerBuilder.RegisterType<NotificationService>().As<INotificationService>();
-            }
-
             containerBuilder.RegisterType<HomeViewModel>();
             containerBuilder.RegisterType<LoginViewModel>();
             containerBuilder.RegisterType<MainViewModel>();
             containerBuilder.RegisterType<MenuViewModel>();
-            containerBuilder.RegisterType<NotificationsViewModel>();
-
-            containerBuilder.RegisterType(typeof(SettingsViewModel<RemoteSettings>));
             containerBuilder.RegisterType<ExtendedSplashViewModel>();
         }
 

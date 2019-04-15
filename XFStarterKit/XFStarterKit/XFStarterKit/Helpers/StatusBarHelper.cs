@@ -4,10 +4,9 @@ namespace XFStarterKit.Core.Helpers
 {
     public class StatusBarHelper
     {
-        static readonly StatusBarHelper instance = new StatusBarHelper();
         public const string TranslucentStatusChangeMessage = "TranslucentStatusChange";
 
-        public static StatusBarHelper Instance => instance;
+        public static StatusBarHelper Instance { get; } = new StatusBarHelper();
 
         protected StatusBarHelper()
         {

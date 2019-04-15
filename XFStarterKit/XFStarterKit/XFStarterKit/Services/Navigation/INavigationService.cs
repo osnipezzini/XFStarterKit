@@ -1,6 +1,6 @@
-﻿using XFStarterKit.Core.ViewModels.Base;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using XFStarterKit.Core.ViewModels.Base;
 
 namespace XFStarterKit.Core.Services.Navigation
 {

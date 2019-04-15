@@ -16,6 +16,8 @@ namespace XFStarterKit.Core.Services.Authentication
             LastName = "Doe"
         };
 
+        User IAuthenticationService.AuthenticatedUser => throw new System.NotImplementedException();
+
         public async Task<bool> LoginAsync(string userName, string password)
         {
             await Task.Delay(500);

@@ -147,8 +147,6 @@ namespace XFStarterKit.Core.Services.Navigation
         {
             mappings.Add(typeof(LoginViewModel), typeof(LoginView));
             mappings.Add(typeof(MainViewModel), typeof(MainView));
-            mappings.Add(typeof(NotificationsViewModel), typeof(NotificationsView));
-            mappings.Add(typeof(SettingsViewModel<RemoteSettings>), typeof(SettingsView));
             mappings.Add(typeof(ExtendedSplashViewModel), typeof(ExtendedSplashView));
             mappings.Add(typeof(HomeViewModel), typeof(HomeView));
         }

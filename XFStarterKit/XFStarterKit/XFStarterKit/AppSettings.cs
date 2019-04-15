@@ -13,109 +13,16 @@ namespace XFStarterKit.Core
         const string defaultAppCenteriOS = "7a2a290b-07b0-47dc-9dcd-15461e894e6d";
         const string defaultAppCenterUWP = "140a8550-c309-4bc1-a05d-e5a0f7e4df1d";
 
-        static string defaultBookingEndpoint;
-        static string defaultHotelsEndpoint;
-        static string defaultSuggestionsEndpoint;
-        static string defaultNotificationsEndpoint;
-        static string defaultSettingsFileUrl;
-
-        // Endpoints
-        const string defaultImagesBaseUri = "https://sh360imgdev.blob.core.windows.net";
-        const string defaultRoomDevicesEndpoint = "";
-
         // Maps
         const string defaultBingMapsApiKey = "AkSuJ-YtW4VDvIzErxK3ke2ILQD1muWwS2KN2QvhqHobx4YBEIYqkEVBLyx1LYby";
         public const string DefaultFallbackMapsLocation = "40.762246,-73.986943";
-
-        // Bots
-        const string defaultSkypeBotId = "87e0cdb5-8e79-4592-9dc8-11697ffe79cc";
-
-        // B2c
-        public const string B2cAuthority = "https://login.microsoftonline.com/";
-        public const string DefaultB2cPolicy = "B2C_1_SignUpInPolicy";
-        public const string DefaultB2cClientId = "b3cfbe11-ac36-4dcb-af16-8656ee286dcc";
-        public const string DefaultB2cTenant = "smarthotel360.onmicrosoft.com";
-
-        // Booking 
-        const bool defaultHasBooking = false;
-
-		// Room Devices
-	    const string defaultRoomId = "";
 
         // Fakes
         const bool defaultUseFakes = false;
 
         static AppSettings()
         {           
-            defaultBookingEndpoint = "http://sh360production.2c3abf6edd44497688b2.westus.aksapp.io/bookings";
-            defaultHotelsEndpoint = "http://sh360production.2c3abf6edd44497688b2.westus.aksapp.io/hotels-api";
-            defaultSuggestionsEndpoint = "http://sh360production.2c3abf6edd44497688b2.westus.aksapp.io/suggestions-api";
-            defaultNotificationsEndpoint = "http://sh360production.2c3abf6edd44497688b2.westus.aksapp.io/notifications-api";
-            defaultSettingsFileUrl = "http://sh360production.2c3abf6edd44497688b2.westus.aksapp.io/configuration-api/cfg/aks";
 		}
-
-        // Azure B2C settings
-        public static string B2cClientId
-        {
-            get => Preferences.Get(nameof(B2cClientId), DefaultB2cClientId);
-            set => Preferences.Set(nameof(B2cClientId), value);
-        }
-
-        public static string B2cTenant
-        {
-            get => Preferences.Get(nameof(B2cTenant), DefaultB2cTenant);
-            set => Preferences.Set(nameof(B2cTenant), value);
-        }
-
-        public static string B2cPolicy
-        {
-            get => Preferences.Get(nameof(B2cPolicy), DefaultB2cPolicy);
-            set => Preferences.Set(nameof(B2cPolicy), value);
-        }
-
-
-        // API Endpoints
-        public static string BookingEndpoint
-        {
-            get => Preferences.Get(nameof(BookingEndpoint), defaultBookingEndpoint);
-            set => Preferences.Set(nameof(BookingEndpoint), value);
-        }
-
-        public static string HotelsEndpoint
-        {
-            get => Preferences.Get(nameof(HotelsEndpoint), defaultHotelsEndpoint);
-            set => Preferences.Set(nameof(HotelsEndpoint), value);
-        }
-
-        public static string SuggestionsEndpoint
-        {
-            get => Preferences.Get(nameof(SuggestionsEndpoint), defaultSuggestionsEndpoint);
-            set => Preferences.Set(nameof(SuggestionsEndpoint), value);
-        }
-
-        public static string NotificationsEndpoint
-        {
-            get => Preferences.Get(nameof(NotificationsEndpoint), defaultNotificationsEndpoint);
-            set => Preferences.Set(nameof(NotificationsEndpoint), value);
-        }
-
-        public static string ImagesBaseUri
-        {
-            get => Preferences.Get(nameof(ImagesBaseUri), defaultImagesBaseUri);
-            set => Preferences.Set(nameof(ImagesBaseUri), value);
-        }
-
-        public static string RoomDevicesEndpoint
-        {
-            get => Preferences.Get(nameof(RoomDevicesEndpoint), defaultRoomDevicesEndpoint);
-            set => Preferences.Set(nameof(RoomDevicesEndpoint), value);
-        }
-
-        public static string SkypeBotId
-        {
-            get => Preferences.Get(nameof(SkypeBotId), defaultSkypeBotId);
-            set => Preferences.Set(nameof(SkypeBotId), value);
-        }
 
         // Other settings
 
@@ -123,12 +30,6 @@ namespace XFStarterKit.Core
         {
             get => Preferences.Get(nameof(BingMapsApiKey), defaultBingMapsApiKey);
             set => Preferences.Set(nameof(BingMapsApiKey), value);
-        }
-
-        public static string SettingsFileUrl
-        {
-            get => Preferences.Get(nameof(SettingsFileUrl), defaultSettingsFileUrl);
-            set => Preferences.Set(nameof(SettingsFileUrl), value);
         }
 
         public static string FallbackMapsLocation
@@ -167,18 +68,10 @@ namespace XFStarterKit.Core
             set => Preferences.Set(nameof(UseFakes), value);
         }
 
-        public static bool HasBooking
-        {
-            get => Preferences.Get(nameof(HasBooking), defaultHasBooking);
-            set => Preferences.Set(nameof(HasBooking), value);
-        }
+        public static bool IsAuthenticated => User != null;
+
+        public static Models.User AuthenticatedUser => User;
 
         public static void RemoveUserData() => Preferences.Remove(nameof(User));
-		
-		public static string RoomId
-	    {
-		    get => Preferences.Get(nameof(RoomId), defaultRoomId);
-		    set => Preferences.Set(nameof(RoomId), value);
-	    }
     }
 }

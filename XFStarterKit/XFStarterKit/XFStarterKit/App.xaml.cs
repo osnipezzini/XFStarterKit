@@ -16,17 +16,12 @@ namespace XFStarterKit.Core
 {
     public partial class App : Application
     {
-        public static PublicClientApplication AuthenticationClient { get; set; }
-
         static App()
         {
             BuildDependencies();
         }
         public App()
         {
-            AuthenticationClient =
-                new PublicClientApplication($"{AppSettings.B2cAuthority}{AppSettings.B2cTenant}", AppSettings.B2cClientId);
-
             InitializeComponent();
 
             InitNavigation();

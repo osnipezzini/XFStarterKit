@@ -1,13 +1,13 @@
-﻿using XFStarterKit.Core.Exceptions;
+﻿using System;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
+using XFStarterKit.Core.Common.Exceptions;
 using XFStarterKit.Core.Models;
 using XFStarterKit.Core.Services.Analytic;
 using XFStarterKit.Core.Services.Authentication;
 using XFStarterKit.Core.Validations;
 using XFStarterKit.Core.ViewModels.Base;
-using System;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace XFStarterKit.Core.ViewModels
 {
@@ -48,10 +48,6 @@ namespace XFStarterKit.Core.ViewModels
 
         public ICommand SignInCommand => new AsyncCommand(SignInAsync);
 
-        public ICommand MicrosoftSignInCommand => new AsyncCommand(MicrosoftSignInAsync);
-
-        public ICommand SettingsCommand => new AsyncCommand(NavigateToSettingsAsync);
-
         async Task SignInAsync()
         {
             IsBusy = true;
@@ -76,37 +72,7 @@ namespace XFStarterKit.Core.ViewModels
             IsBusy = false;
         }
 
-        async Task MicrosoftSignInAsync()
-        {
-            try
-            {
-                IsBusy = true;
-
-                var succeeded = true;// await authenticationService.LoginWithMicrosoftAsync();
-
-                if (succeeded)
-                {
-                    analyticService.TrackEvent("MicrosoftSignIn");
-                    await NavigationService.NavigateToAsync<MainViewModel>();
-                }
-            }
-            catch (ServiceAuthenticationException)
-            {
-                await DialogService.ShowAlertAsync("Please, try again.", "Login error", "Ok");
-            }
-            catch(ConnectivityException)
-            {
-                await DialogService.ShowAlertAsync("There is no Internet connection, try again later.", "Error", "Ok");
-            }
-            catch(Exception)
-            {
-                await DialogService.ShowAlertAsync("An error occurred, try again.", "Error", "Ok");
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-        }
+        
 
         void AddValidations()
         {
@@ -122,7 +88,5 @@ namespace XFStarterKit.Core.ViewModels
 
             return isValidUser && isValidPassword;
         }
-
-        Task NavigateToSettingsAsync(object obj) => NavigationService.NavigateToAsync(typeof(SettingsViewModel<RemoteSettings>));
     }
 }
