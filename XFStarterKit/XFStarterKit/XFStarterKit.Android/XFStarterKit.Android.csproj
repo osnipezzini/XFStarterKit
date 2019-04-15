@@ -119,6 +119,14 @@
     <Compile Include="SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Fonts\firasans\FiraSans-Bold.ttf" />
+    <AndroidAsset Include="Assets\Fonts\firasans\FiraSans-Regular.ttf" />
+    <AndroidAsset Include="Assets\Fonts\firasans\FiraSans-SemiBold.ttf" />
+    <AndroidAsset Include="Assets\Fonts\poppins\Poppins-Bold.ttf" />
+    <AndroidAsset Include="Assets\Fonts\poppins\Poppins-Light.ttf" />
+    <AndroidAsset Include="Assets\Fonts\poppins\Poppins-Medium.ttf" />
+    <AndroidAsset Include="Assets\Fonts\poppins\Poppins-Regular.ttf" />
+    <AndroidAsset Include="Assets\Fonts\poppins\Poppins-SemiBold.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -129,7 +137,9 @@
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Fonts\firasans\OFL.txt" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\XFStarterKit.Core.Model\XFStarterKit.Core.Models.csproj">
       <Project>{E24091BB-A4F4-4463-AC9C-72C5DDC28BD2}</Project>
@@ -193,6 +203,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Fonts\poppins\OFL.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

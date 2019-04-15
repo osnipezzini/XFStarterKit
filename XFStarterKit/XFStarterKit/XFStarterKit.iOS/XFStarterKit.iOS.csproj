@@ -104,6 +104,14 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\Fonts\firasans\FiraSans-Bold.ttf" />
+    <BundleResource Include="Resources\Fonts\firasans\FiraSans-Regular.ttf" />
+    <BundleResource Include="Resources\Fonts\firasans\FiraSans-SemiBold.ttf" />
+    <BundleResource Include="Resources\Fonts\poppins\Poppins-Bold.ttf" />
+    <BundleResource Include="Resources\Fonts\poppins\Poppins-Light.ttf" />
+    <BundleResource Include="Resources\Fonts\poppins\Poppins-Medium.ttf" />
+    <BundleResource Include="Resources\Fonts\poppins\Poppins-Regular.ttf" />
+    <BundleResource Include="Resources\Fonts\poppins\Poppins-SemiBold.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -222,6 +230,12 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\pushpin_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fonts\firasans\OFL.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fonts\poppins\OFL.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
