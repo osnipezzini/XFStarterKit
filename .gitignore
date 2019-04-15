@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/XFStarterKit/XFStarterKit/XFStarterKit/obj
+/XFStarterKit/.vs/XFStarterKit/v15
+/XFStarterKit/XFStarterKit/XFStarterKit.Android/obj
+/XFStarterKit/XFStarterKit/XFStarterKit/bin/Debug/netstandard2.0
+/XFStarterKit/XFStarterKit/XFStarterKit.Android/bin/Debug
+/XFStarterKit/XFStarterKit/XFStarterKit.iOS/bin/iPhoneSimulator/Debug
+/XFStarterKit/XFStarterKit/XFStarterKit.iOS/obj
+/XFStarterKit/XFStarterKit/XFStarterKit.UWP/bin/x86/Debug
+/XFStarterKit/XFStarterKit/XFStarterKit.UWP/obj
