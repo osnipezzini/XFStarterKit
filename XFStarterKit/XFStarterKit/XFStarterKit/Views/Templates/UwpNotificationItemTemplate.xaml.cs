@@ -1,0 +1,22 @@
+﻿using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace XFStarterKit.Core.Views.Templates
+{
+    public partial class UwpNotificationItemTemplate : ContentView
+    {
+        public static readonly BindableProperty TapCommandProperty =
+            BindableProperty.Create("TapCommand", typeof(ICommand), typeof(NotificationItemTemplate));
+
+        public ICommand TapCommand
+        {
+            get => (ICommand)GetValue(TapCommandProperty);
+            set => SetValue(TapCommandProperty, value);
+        }
+
+        public UwpNotificationItemTemplate()
+        {
+            InitializeComponent();
+        }
+    }
+}

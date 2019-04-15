@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Behaviors\**" />
+    <Compile Remove="Controls\**" />
+    <Compile Remove="Converters\**" />
+    <Compile Remove="Effects\**" />
+    <Compile Remove="Exceptions\**" />
+    <Compile Remove="Extensions\**" />
+    <Compile Remove="Helpers\**" />
+    <Compile Remove="MarkupExtensions\**" />
+    <Compile Remove="Models\**" />
+    <Compile Remove="Resources\**" />
+    <Compile Remove="Services\**" />
+    <Compile Remove="Utils\**" />
+    <Compile Remove="Validations\**" />
+    <Compile Remove="ViewModels\**" />
+    <Compile Remove="Views\**" />
+    <EmbeddedResource Remove="Behaviors\**" />
+    <EmbeddedResource Remove="Controls\**" />
+    <EmbeddedResource Remove="Converters\**" />
+    <EmbeddedResource Remove="Effects\**" />
+    <EmbeddedResource Remove="Exceptions\**" />
+    <EmbeddedResource Remove="Extensions\**" />
+    <EmbeddedResource Remove="Helpers\**" />
+    <EmbeddedResource Remove="MarkupExtensions\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="Utils\**" />
+    <EmbeddedResource Remove="Validations\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="Behaviors\**" />
+    <None Remove="Controls\**" />
+    <None Remove="Converters\**" />
+    <None Remove="Effects\**" />
+    <None Remove="Exceptions\**" />
+    <None Remove="Extensions\**" />
+    <None Remove="Helpers\**" />
+    <None Remove="MarkupExtensions\**" />
+    <None Remove="Models\**" />
+    <None Remove="Resources\**" />
+    <None Remove="Services\**" />
+    <None Remove="Utils\**" />
+    <None Remove="Validations\**" />
+    <None Remove="ViewModels\**" />
+    <None Remove="Views\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="AppSettings.cs" />
+    <Compile Remove="MainPage.xaml.cs" />
+    <Compile Remove="MessengerKeys.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="MainPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.293080" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>

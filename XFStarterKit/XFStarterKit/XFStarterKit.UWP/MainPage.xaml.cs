@@ -21,7 +21,7 @@ namespace XFStarterKit.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new XFStarterKit.App());
+            LoadApplication(new XFStarterKit.Core.App());
         }
     }
 }

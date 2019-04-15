@@ -14,3 +14,6 @@
 /XFStarterKit/XFStarterKit.RequestHandler/obj
 /XFStarterKit/XFStarterKit.Validations/obj
 /XFStarterKit/XFStarterKit.ViewModels/obj
+/XFStarterKit/XFStarterKit.RequestHandler/bin/Debug/netstandard2.0
+/XFStarterKit/XFStarterKit.Validations/bin/Debug/netstandard2.0
+/XFStarterKit/XFStarterKit.ViewModels/bin/Debug/netstandard2.0
