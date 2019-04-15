@@ -23,3 +23,5 @@
 /XFStarterKit/XFStarterKit.Core.Model/obj
 /XFStarterKit/XFStarterKit.Core.Services/bin/Debug/netstandard2.0
 /XFStarterKit/XFStarterKit.Core.Services/obj
+/XFStarterKit/XFStarterKit.Core.SQLite/bin
+/XFStarterKit/XFStarterKit.Core.SQLite/obj
