@@ -3,9 +3,9 @@ using Xamarin.Forms;
 
 namespace XFStarterKit.Core.SQLite
 {
-    public class BSMContext : DbContext
+    public class XFStarterKitContext : DbContext
     {
-        public BSMContext()
+        public XFStarterKitContext()
         {
             this.Database.EnsureCreated();
             this.Database.Migrate();

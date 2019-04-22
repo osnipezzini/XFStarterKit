@@ -5,7 +5,7 @@
     xmlns:views="clr-namespace:XFStarterKit.Core.Views;assembly=XFStarterKit.Core"
     x:Class="XFStarterKit.Core.Views.MainView"
     MasterBehavior="Popover"
-    Title="SmartHotel">
+    Title="XFStarterKit">
     <MasterDetailPage.Master>
         <views:MenuView
             BindingContext="{Binding MenuViewModel}"/>

@@ -9,11 +9,11 @@ namespace XFStarterKit.Core.SQLite
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class, new()
     {
-        private BSMContext _context;
+        private XFStarterKitContext _context;
 
         public GenericRepository()
         {
-            _context = new BSMContext();
+            _context = new XFStarterKitContext();
         }
 
         public async Task<int> Delete(T entity)

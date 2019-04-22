@@ -4,7 +4,7 @@ namespace XFStarterKit.Core.Effects
 {
     public class UnderlineTextEffect : RoutingEffect
     {
-        public UnderlineTextEffect() : base("SmartHotel.UnderlineTextEffect")
+        public UnderlineTextEffect() : base("XFStarterKit.Core.Effects")
         {
         }
     }
