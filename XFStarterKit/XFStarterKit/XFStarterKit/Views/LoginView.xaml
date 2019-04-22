@@ -72,7 +72,7 @@
         </EventTrigger>
     </ContentPage.Triggers>
     <ContentPage.Content>
-        <Grid>
+        <Grid BackgroundColor="Gray">
             <Grid 
                 RowSpacing="0">
                 <Grid.RowDefinitions>
