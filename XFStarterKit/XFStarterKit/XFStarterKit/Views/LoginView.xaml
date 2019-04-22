@@ -20,12 +20,6 @@
                 <xamanimation:FadeToAnimation Opacity="1" Duration="250" />
             </xamanimation:StoryBoard>
 
-            <xamanimation:StoryBoard 
-                x:Key="LogoAnimation"    
-                Target="{x:Reference Logo}">
-                <xamanimation:TranslateToAnimation TranslateY="500" Duration="0" />
-                <xamanimation:TranslateToAnimation TranslateY="0" Easing="SpringOut" Duration="750" />
-            </xamanimation:StoryBoard>
 
             <Color x:Key="FocusLineColor">#D87E56</Color>
             <Color x:Key="InvalidLineColor">#FF204F</Color>
@@ -75,8 +69,6 @@
         <EventTrigger Event="Appearing">
             <xamanimation:BeginAnimation   
                 Animation="{StaticResource SignButtonsInitialAnimation}" />
-            <xamanimation:BeginAnimation   
-                Animation="{StaticResource LogoAnimation}" />
         </EventTrigger>
     </ContentPage.Triggers>
     <ContentPage.Content>
@@ -107,34 +99,6 @@
                         Desktop='Center'
                         Tablet='Center'
                         Phone='Stretch'}">
-                    <FlexLayout
-                        StyleId="signin-form-top-logo-container"
-                        FlexLayout.AlignItems="{OnIdiom
-                            Desktop='End'
-                            Tablet='End'
-                            Phone='Start'}">
-                        <Image
-                            x:Name="Logo"
-                            StyleId="signin-form-top-logo"
-                            Source="{OnPlatform
-                                Android='logo_splash'
-                                iOS='logo_splash'
-                                UWP='Assets/logo_splash.png'}"
-                            HeightRequest="{OnIdiom 
-                                Desktop='100' 
-                                Tablet='100' 
-                                Phone='95'}"
-                            VerticalOptions="{OnIdiom 
-                                Desktop='End'
-                                Tablet='End' 
-                                Phone='Start'}">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer 
-                                    NumberOfTapsRequired="2" 
-                                    Command="{Binding SettingsCommand}" />
-                            </Image.GestureRecognizers>
-                        </Image>
-                    </FlexLayout>
                     <Label
                         StyleClass="signin-form-header-text"
                         Text="{extensions:Translate Username}"
@@ -284,30 +248,7 @@
                             BackgroundColor="{StaticResource WhiteColor}"
                             TextColor="{StaticResource OrangeColor}" />
                     </ctrls:ButtonFrame>
-                    <Label 
-                        Text="or"
-                        FlexLayout.AlignSelf="Center"
-                        TextColor="{StaticResource BlackTextColor}"
-                        FontFamily="{StaticResource PoppinsRegular}"
-                        FontSize="{StaticResource MediumSize}"
-                        Margin="{OnPlatform
-                            Android='0,1'
-                            iOS='0,8'
-                            UWP='0,8'}" />
-                    <ctrls:ButtonFrame
-                        HorizontalOptions="{OnIdiom
-                            Desktop='Center'
-                            Tablet='Center'
-                            Phone='FillAndExpand'}"
-                        WidthRequest="{OnIdiom
-                            Desktop='350'
-                            Tablet='320'}">
-                        <Button
-                            Text="{extensions:Translate SignInMicrosoftMayus}"
-                            Command="{Binding MicrosoftSignInCommand}"
-                            BackgroundColor="{StaticResource BlueColor}"
-                            TextColor="{StaticResource WhiteColor}" />
-                    </ctrls:ButtonFrame>
+                    
                 </FlexLayout>
             </Grid>
             <ActivityIndicator 
